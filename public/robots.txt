@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /thankyoupage
+
+Sitemap: https://ashimaempowers.com/sitemap.xml
