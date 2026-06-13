@@ -906,19 +906,7 @@ function LandingPage() {
         </motion.section>
 
         <section id="inside" className="relative mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr]">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariant}>
-              <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">Inside the blueprint</p>
-              <h2 className="mt-4 font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-6xl">The Answers You're Looking For Are Already There</h2>
-              <div className="mt-9 grid gap-3 sm:grid-cols-2">
-                {blueprintPreview.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-[#D7D7D7] sm:text-base">
-                    <Star className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" /> {item}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
+          <div className="flex justify-center">
             <motion.div
               initial={{ opacity: 0, rotateX: 8, y: 50 }}
               whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
@@ -1013,7 +1001,10 @@ function LandingPage() {
             <p className="mx-auto mt-5 max-w-2xl font-['Cormorant_Garamond'] text-[1.55rem] leading-relaxed text-white sm:text-2xl">
               Custom-made by ASHIMA. Not AI-generated. Delivered within 2–5 working days.
             </p>
-            <div className="mx-auto mt-6 flex max-w-4xl flex-wrap justify-center gap-3">
+            <button onClick={goToPayment} className="mt-8 w-full rounded-full bg-[#D8A545] px-6 py-5 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_0_60px_rgba(216,165,69,0.32)] transition hover:-translate-y-1 hover:bg-[#F2D07C] sm:w-auto sm:px-10 sm:text-sm sm:tracking-[0.2em]">
+              Get My Report Now
+            </button>
+            <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
               {['Prepared by ASHIMA', 'Not AI Generated', 'Personalized 10-Minute Video Recording', 'Delivered within 2–5 working days'].map((highlight) => (
                 <span key={highlight} className="rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#F2D07C] sm:px-4 sm:text-xs sm:tracking-[0.18em]">
                   {highlight}
@@ -1027,9 +1018,6 @@ function LandingPage() {
                 </div>
               ))}
             </div>
-            <button onClick={goToPayment} className="mt-10 w-full rounded-full bg-[#D8A545] px-6 py-5 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_0_60px_rgba(216,165,69,0.32)] transition hover:-translate-y-1 hover:bg-[#F2D07C] sm:w-auto sm:px-10 sm:text-sm sm:tracking-[0.2em]">
-              Get My Report Now
-            </button>
           </motion.div>
         </section>
 
