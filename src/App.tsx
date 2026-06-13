@@ -19,6 +19,7 @@ import {
   Search,
   ShieldCheck,
   Star,
+  Trash2,
   X,
   User,
   VenusAndMars,
@@ -359,6 +360,7 @@ function AdminPage() {
   const [query, setQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
   const [updatingOrderId, setUpdatingOrderId] = useState('')
+  const [deletingOrderId, setDeletingOrderId] = useState('')
 
   const fetchOrders = useCallback(async () => {
     setIsLoading(true)
@@ -455,6 +457,35 @@ function AdminPage() {
     }
   }
 
+  const deleteOrder = async (orderId: string) => {
+    if (!window.confirm('Are you sure you want to delete this order? This action cannot be undone.')) {
+      return
+    }
+    setDeletingOrderId(orderId)
+    setError('')
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${window.sessionStorage.getItem('ashima-admin-password') || password}`,
+        },
+        body: JSON.stringify({ id: orderId }),
+      })
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null)
+        throw new Error(result?.error || 'Unable to delete order')
+      }
+
+      setOrders((currentOrders) => currentOrders.filter((order) => order.id !== orderId))
+    } catch (deleteError) {
+      setError(deleteError instanceof Error ? deleteError.message : 'Unable to delete order')
+    } finally {
+      setDeletingOrderId('')
+    }
+  }
+
   const exportCsv = () => {
     const headers = ['Name', 'WhatsApp', 'Email', 'Birth Date', 'Birth Time', 'Birth Place', 'Gender', 'Status', 'Stripe Session', 'Created At']
     const rows = filteredOrders.map((order) => [
@@ -547,6 +578,7 @@ function AdminPage() {
                   <th className="px-4">Gender</th>
                   <th className="px-4">Status</th>
                   <th className="px-4">Submitted</th>
+                  <th className="px-4 text-center">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -568,12 +600,22 @@ function AdminPage() {
                         ))}
                       </select>
                     </td>
-                    <td className="rounded-r-2xl px-4 py-4 text-[#A0A0A0]"><p>{new Date(order.created_at).toLocaleString()}</p>{order.updated_at && <p className="text-xs">Updated: {new Date(order.updated_at).toLocaleString()}</p>}</td>
+                    <td className="px-4 py-4 text-[#A0A0A0]"><p>{new Date(order.created_at).toLocaleString()}</p>{order.updated_at && <p className="text-xs">Updated: {new Date(order.updated_at).toLocaleString()}</p>}</td>
+                    <td className="rounded-r-2xl px-4 py-4 text-center">
+                      <button
+                        onClick={() => deleteOrder(order.id)}
+                        disabled={deletingOrderId === order.id}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs font-semibold text-red-400 hover:bg-red-500/20 disabled:opacity-60 transition"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                        {deletingOrderId === order.id ? 'Deleting...' : 'Delete'}
+                      </button>
+                    </td>
                   </tr>
                 ))}
                 {!isLoading && filteredOrders.length === 0 && (
                   <tr>
-                    <td colSpan={6} className="rounded-2xl bg-black/35 px-4 py-10 text-center text-[#A0A0A0]">No orders found.</td>
+                    <td colSpan={7} className="rounded-2xl bg-black/35 px-4 py-10 text-center text-[#A0A0A0]">No orders found.</td>
                   </tr>
                 )}
               </tbody>

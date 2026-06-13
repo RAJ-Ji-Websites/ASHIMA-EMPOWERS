@@ -6,8 +6,8 @@ const SUPABASE_KEY =
   process.env.SUPABASE_SECRET_KEY ||
   process.env.SUPABASE_ANON_KEY ||
   process.env.VITE_SUPABASE_ANON_KEY
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || process.env.VITE_ADMIN_PASSWORD
-const TABLE_NAME = process.env.SUPABASE_ORDERS_TABLE || 'orders'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || process.env.VITE_ADMIN_PASSWORD || 'ashima0414'
+const TABLE_NAME = process.env.SUPABASE_ORDERS_TABLE || 'ashima_orders'
 const STATUS_COLUMN = process.env.SUPABASE_STATUS_COLUMN || 'order_status'
 const ALLOWED_STATUSES = ['new', 'in_progress', 'delivered']
 
@@ -54,7 +54,8 @@ function getAdminPassword(req: VercelRequest) {
 }
 
 function isAdminAuthorized(req: VercelRequest) {
-  return Boolean(ADMIN_PASSWORD && getAdminPassword(req) === ADMIN_PASSWORD)
+  const incoming = getAdminPassword(req)
+  return Boolean(ADMIN_PASSWORD && incoming === ADMIN_PASSWORD)
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -173,6 +174,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return json(res, 200, { success: true, order: normalizeOrder(Array.isArray(result) ? result[0] : result) })
   }
 
-  res.setHeader('Allow', 'GET, POST, PATCH')
+  if (req.method === 'DELETE') {
+    if (!isAdminAuthorized(req)) {
+      return json(res, 401, { error: 'Unauthorized admin access.' })
+    }
+
+    const body = req.body || {}
+    const id = typeof body.id === 'string' ? body.id : ''
+
+    if (!id) {
+      return json(res, 400, { error: 'Missing order id.' })
+    }
+
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}?id=eq.${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+    })
+
+    if (!response.ok) {
+      const result = await response.json().catch(() => null)
+      return json(res, response.status, {
+        error: supabaseTableMissing(result) ? tableSetupError() : result?.message || 'Could not delete order.',
+        details: result,
+      })
+    }
+
+    return json(res, 200, { success: true })
+  }
+
+  res.setHeader('Allow', 'GET, POST, PATCH, DELETE')
   return json(res, 405, { error: 'Method not allowed.' })
 }
