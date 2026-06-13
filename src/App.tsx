@@ -789,17 +789,6 @@ function LandingPage() {
               A confidential personalized 10-Minute Video life report created by ASHIMA specifically for one individual — you.
             </motion.p>
 
-            <motion.div variants={sectionVariant} id="benefits" className="mt-7 grid gap-3 sm:mt-9 sm:grid-cols-2">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-3 text-sm text-[#D7D7D7]">
-                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[#D8A545]/35 bg-[#D8A545]/10">
-                    <Check className="h-3.5 w-3.5 text-[#F2D07C]" />
-                  </span>
-                  {benefit}
-                </div>
-              ))}
-            </motion.div>
-
             <motion.div variants={sectionVariant} className="mt-9 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center">
               <button
                 onClick={scrollToOffer}
@@ -826,6 +815,17 @@ function LandingPage() {
                 </div>
                 <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[#A0A0A0]">Limited-Time-Offer</p>
               </div>
+            </motion.div>
+
+            <motion.div variants={sectionVariant} id="benefits" className="mt-7 grid gap-3 sm:mt-9 sm:grid-cols-2">
+              {benefits.map((benefit) => (
+                <div key={benefit} className="flex items-center gap-3 text-sm text-[#D7D7D7]">
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-[#D8A545]/35 bg-[#D8A545]/10">
+                    <Check className="h-3.5 w-3.5 text-[#F2D07C]" />
+                  </span>
+                  {benefit}
+                </div>
+              ))}
             </motion.div>
           </motion.div>
 
@@ -1001,8 +1001,23 @@ function LandingPage() {
             <p className="mx-auto mt-5 max-w-2xl font-['Cormorant_Garamond'] text-[1.55rem] leading-relaxed text-white sm:text-2xl">
               Custom-made by ASHIMA. Not AI-generated. Delivered within 2–5 working days.
             </p>
-            <button onClick={goToPayment} className="mt-8 w-full rounded-full bg-[#D8A545] px-6 py-5 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[0_0_60px_rgba(216,165,69,0.32)] transition hover:-translate-y-1 hover:bg-[#F2D07C] sm:w-auto sm:px-10 sm:text-sm sm:tracking-[0.2em]">
-              Get My Report Now
+            <button
+              onClick={goToPayment}
+              className="luxury-cta group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 px-5 py-5 text-center text-[11px] font-black uppercase tracking-[0.1em] text-black shadow-[0_0_55px_rgba(216,165,69,0.28)] transition hover:-translate-y-1 sm:w-auto sm:px-10 sm:py-6 sm:text-sm sm:tracking-[0.16em]"
+            >
+              <span className="absolute inset-0 overflow-hidden rounded-full">
+                <span className="absolute inset-0 bg-[#D8A545]" />
+                <span className="luxury-cta-orb luxury-cta-orb-one" />
+                <span className="luxury-cta-orb luxury-cta-orb-two" />
+                <span className="luxury-cta-glow" />
+                <span className="luxury-cta-lines" />
+                <span className="luxury-cta-spark luxury-cta-spark-one" />
+                <span className="luxury-cta-spark luxury-cta-spark-two" />
+                <span className="luxury-cta-spark luxury-cta-spark-three" />
+              </span>
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                Get My Report Now <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+              </span>
             </button>
             <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
               {['Prepared by ASHIMA', 'Not AI Generated', 'Personalized 10-Minute Video Recording', 'Delivered within 2–5 working days'].map((highlight) => (
