@@ -29,7 +29,7 @@ import './index.css'
 
 const portrait = '/uploads/ashima-portrait.webp'
 const brandLogo = '/ashima-logo.webp'
-const stripePaymentLink = import.meta.env.VITE_STRIPE_PAYMENT_LINK || 'https://buy.stripe.com/dRm8wQ0F382O3bE9cfgEg04'
+const stripePaymentLink = import.meta.env.VITE_STRIPE_PAYMENT_LINK || 'https://buy.stripe.com/8x200kafD3MydQi603gEg08'
 
 const benefits = [
   'Detailed Kundli Analysis',
