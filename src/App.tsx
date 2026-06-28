@@ -1032,36 +1032,13 @@ function LandingPage() {
                 </div>
               </div>
               <motion.button
-                whileHover="hover"
-                whileTap="tap"
-                variants={{
-                  hover: { scale: 1.03, y: -2 },
-                  tap: { scale: 0.98 }
-                }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={goToPayment}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
+                className="w-full mt-8 rounded-full bg-[#D8A545]/10 border border-[#D8A545]/45 hover:bg-[#D8A545] hover:text-black py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-[#F2D07C] transition-all duration-300 shadow-[0_0_30px_rgba(216,165,69,0.05)] cursor-pointer"
               >
-                <span className="absolute inset-0 overflow-hidden rounded-full">
-                  <span className="absolute inset-0 bg-[#D8A545]" />
-                  <span className="luxury-cta-orb luxury-cta-orb-one" />
-                  <span className="luxury-cta-orb luxury-cta-orb-two" />
-                  <span className="luxury-cta-glow" />
-                  <span className="luxury-cta-lines" />
-                  <span className="luxury-cta-spark luxury-cta-spark-one" />
-                  <span className="luxury-cta-spark luxury-cta-spark-two" />
-                  <span className="luxury-cta-spark luxury-cta-spark-three" />
-                </span>
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get My Video Recording{" "}
-                  <motion.span
-                    variants={{
-                      hover: { x: 4 },
-                      tap: { x: 0 }
-                    }}
-                    className="inline-block"
-                  >
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </motion.span>
+                <span className="flex items-center justify-center gap-2">
+                  Get My Video Report <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </motion.button>
             </motion.div>
@@ -1103,36 +1080,13 @@ function LandingPage() {
                 </div>
               </div>
               <motion.button
-                whileHover="hover"
-                whileTap="tap"
-                variants={{
-                  hover: { scale: 1.03, y: -2 },
-                  tap: { scale: 0.98 }
-                }}
-                onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_25MIN || 'https://buy.stripe.com/test-25min'}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.location.href = 'https://buy.stripe.com/3cI4gAevT3MyfYqdsvgEg09'}
+                className="w-full mt-8 rounded-full bg-[#D8A545]/10 border border-[#D8A545]/45 hover:bg-[#D8A545] hover:text-black py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-[#F2D07C] transition-all duration-300 shadow-[0_0_30px_rgba(216,165,69,0.05)] cursor-pointer"
               >
-                <span className="absolute inset-0 overflow-hidden rounded-full">
-                  <span className="absolute inset-0 bg-[#D8A545]" />
-                  <span className="luxury-cta-orb luxury-cta-orb-one" />
-                  <span className="luxury-cta-orb luxury-cta-orb-two" />
-                  <span className="luxury-cta-glow" />
-                  <span className="luxury-cta-lines" />
-                  <span className="luxury-cta-spark luxury-cta-spark-one" />
-                  <span className="luxury-cta-spark luxury-cta-spark-two" />
-                  <span className="luxury-cta-spark luxury-cta-spark-three" />
-                </span>
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Book 25-Min Consultation{" "}
-                  <motion.span
-                    variants={{
-                      hover: { x: 4 },
-                      tap: { x: 0 }
-                    }}
-                    className="inline-block"
-                  >
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </motion.span>
+                <span className="flex items-center justify-center gap-2">
+                  Book 25-Min Consultation <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </motion.button>
             </motion.div>
@@ -1183,7 +1137,7 @@ function LandingPage() {
                   hover: { scale: 1.03, y: -2 },
                   tap: { scale: 0.98 }
                 }}
-                onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_60MIN || 'https://buy.stripe.com/test-60min'}
+                onClick={() => window.location.href = 'https://buy.stripe.com/5kQ28s2NbaaWcMefADgEg07'}
                 className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
