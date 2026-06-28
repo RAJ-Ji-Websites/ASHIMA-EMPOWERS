@@ -783,6 +783,9 @@ function LandingPage() {
             <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute left-1 top-12 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-left-8 sm:top-20 sm:px-4 sm:py-3 sm:text-sm">
               ✨ Personalized For You
             </motion.div>
+            <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute right-1 top-1/2 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-right-7 sm:px-4 sm:py-3 sm:text-sm">
+              💬 1:1 Consultation
+            </motion.div>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }} className="relative">
@@ -801,7 +804,7 @@ function LandingPage() {
             </motion.h1>
 
             <motion.p variants={sectionVariant} className="mt-6 max-w-2xl font-['Cormorant_Garamond'] text-[1.45rem] leading-relaxed text-[#d8d8d8] sm:mt-8 sm:text-3xl">
-              Confidential, deeply personalized Astrology, Numerology, and Palmistry guidance tailored specifically to you. Speak with Ashima directly or receive a custom video blueprint.
+              Every journey is unique. Receive personalized Clarity through Astrology, Numerology, and Palmistry—whether you prefer a short video report/recording or a private 1:1 consultation with Ashima.
             </motion.p>
 
             <motion.div variants={sectionVariant} className="mt-9 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center">
@@ -842,160 +845,7 @@ function LandingPage() {
           </motion.div>
         </section>
 
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ staggerChildren: 0.08 }}
-          className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8"
-        >
-          <motion.h2 variants={sectionVariant} className="mx-auto mt-4 max-w-4xl text-center font-['Cinzel'] text-3xl leading-tight text-white sm:text-4xl md:text-6xl">
-            You've Wondered About These Things Before
-          </motion.h2>
-          <div className="mt-10 grid gap-4 sm:mt-14 md:grid-cols-5">
-            {questions.map((question, index) => (
-              <motion.div
-                key={question}
-                variants={sectionVariant}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group min-h-36 rounded-[1.5rem] border border-[#D8A545]/15 bg-[#0D0D0D]/70 p-5 backdrop-blur-xl transition hover:border-[#D8A545]/45 hover:bg-[#14110b] sm:min-h-48 sm:rounded-[2rem] sm:p-6"
-              >
-                <span className="font-['Cinzel'] text-4xl text-[#D8A545]/25 sm:text-5xl">0{index + 1}</span>
-                <p className="mt-5 font-['Cormorant_Garamond'] text-[1.65rem] leading-tight text-white sm:mt-8 sm:text-2xl">{question}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        <section id="inside" className="relative mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <div className="flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, rotateX: 8, y: 50 }}
-              whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative mx-auto w-full max-w-[520px]"
-            >
-              <div className="absolute inset-0 rotate-2 rounded-[1.5rem] border border-[#D8A545]/20 bg-[#D8A545]/5 sm:rotate-3 sm:rounded-[2rem]" />
-              <div className="relative rounded-[1.5rem] border border-[#D8A545]/35 bg-[#0D0D0D] p-4 shadow-[0_40px_120px_rgba(216,165,69,0.12)] sm:rounded-[2rem] sm:p-7">
-                <div className="rounded-[1.25rem] border border-[#D8A545]/20 bg-black p-5 sm:rounded-[1.5rem] sm:p-8">
-                  <div className="flex items-center justify-between border-b border-[#D8A545]/20 pb-6">
-                    <span className="text-xs uppercase tracking-[0.26em] text-[#D8A545] sm:tracking-[0.4em]">Confidential</span>
-                    <LockKeyhole className="h-5 w-5 text-[#F2D07C]" />
-                  </div>
-                  <h3 className="mt-10 font-['Cinzel'] text-3xl leading-tight text-white sm:mt-14 sm:text-4xl">Personal Life Blueprint</h3>
-                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">Prepared for one individual</p>
-                  <div className="mt-12 space-y-4">
-                    {blueprintPreview.slice(0, 5).map((item, index) => (
-                      <div key={item} className="flex items-center justify-between border-b border-white/10 pb-3">
-                        <span className="text-[#A0A0A0]">{item}</span>
-                        <span className="font-['Cinzel'] text-[#D8A545]">{String(index + 1).padStart(2, '0')}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-10 min-h-24 rounded-2xl border border-[#D8A545]/20 bg-[linear-gradient(135deg,rgba(216,165,69,.12),rgba(255,255,255,.02))] p-5 sm:mt-12">
-                    <p className="text-xs uppercase leading-relaxed tracking-[0.18em] text-[#D8A545] sm:tracking-[0.25em]">Private interpretation enclosed by ASHIMA</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="about" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
-              <div className="absolute inset-8 rounded-full bg-[#D8A545]/15 blur-3xl" />
-              <img src={portrait} alt="Ashima Gautam creating personalized life reports" className="relative aspect-[4/5] w-full rounded-[2rem] border border-[#D8A545]/25 object-cover shadow-2xl grayscale-[20%] sm:rounded-[2.5rem]" loading="lazy" />
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariant}>
-              <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">About Ashima</p>
-              <h2 className="mt-4 font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-6xl">Guidance Without Fear.</h2>
-              <p className="mt-6 font-['Cormorant_Garamond'] text-2xl leading-relaxed text-white sm:mt-7 sm:text-3xl">
-                Ashima combines Astrology, Numerology and Palmistry to help people understand themselves more clearly.
-              </p>
-              <p className="mt-5 text-lg leading-relaxed text-[#A0A0A0]">
-                Her work is designed for clarity, awareness, guidance and self-understanding — never pressure, superstition or manipulation.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {['No Fear Tactics', 'No Fake Remedies', 'No Gemstone Selling', 'Only Personalized Guidance'].map((badge) => (
-                  <span key={badge} className="rounded-full border border-[#D8A545]/25 bg-white/[0.035] px-4 py-2 text-sm text-[#F2D07C]">
-                    {badge}
-                  </span>
-                ))}
-              </div>
-              <a href="https://www.instagram.com/ashima_empowers" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 text-[#F2D07C] hover:text-white">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
-                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
-                </svg>
-                @ashima_empowers
-              </a>
-            </motion.div>
-          </div>
-        </section>
-
-        <section id="reviews" className="overflow-hidden py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-5 text-center lg:px-8">
-            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">Private client notes</p>
-            <h2 className="mt-4 font-['Cinzel'] text-3xl sm:text-4xl md:text-6xl">Felt Written Specifically For Me</h2>
-          </div>
-          <div className="mx-4 mt-10 max-w-6xl rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-3 shadow-[0_0_80px_rgba(216,165,69,0.1)] backdrop-blur-2xl sm:mx-auto sm:mt-14 sm:rounded-[2.5rem] sm:p-4 md:p-8">
-            <div className="elfsight-app-5a7a8e6f-1515-45fa-8f33-81aa6506c964" data-elfsight-app-lazy />
-          </div>
-
-          {/* Handcrafted Luxury Client Testimonials */}
-          <div className="mx-auto max-w-7xl px-4 mt-12 grid gap-6 sm:grid-cols-3 lg:px-8">
-            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
-              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
-                ))}
-              </div>
-              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
-                "The 10-Minute Video Report was incredibly accurate. Ashima picked up on career timing that played out exactly as she predicted. I love that I can watch it whenever I need guidance."
-              </p>
-              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Rahul M., Delhi</p>
-            </div>
-
-            <div className="rounded-3xl border border-[#D8A545]/25 bg-[#D8A545]/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(216,165,69,0.05)]">
-              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
-                ))}
-              </div>
-              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
-                "My 60-Minute Complete Consultation with Ashima was life-changing. We did a deep dive into my Kundli, Palmistry, and Numerology. Being able to ask questions live gave me so much clarity."
-              </p>
-              <p className="mt-4 text-xs uppercase tracking-wider text-[#F2D07C] font-semibold">— Sneha R., Mumbai</p>
-            </div>
-
-            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
-              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
-                ))}
-              </div>
-              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
-                "The 25-Minute Private Consultation was perfect. I had two very specific questions about my business transition, and Ashima gave me precise, actionable guidance without any fear tactics."
-              </p>
-              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Arjun K., Bangalore</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="offer" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.4em]">CHOOSE YOUR EXPERIENCE</p>
-            <h2 className="mx-auto mt-4 max-w-4xl font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-6xl text-white">
-              Choose The Guidance That Fits Your Needs
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl font-['Cormorant_Garamond'] text-xl sm:text-2xl text-[#A0A0A0]">
-              Receive custom-crafted wisdom from Ashima, tailored precisely to your birth alignment and palmistry. Choose the format that resonates with you.
-            </p>
-          </div>
-
+        <section id="offer" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-20 lg:px-8">
           <div className="grid gap-8 md:grid-cols-3 items-stretch">
             {/* Service 1 */}
             <motion.div
@@ -1138,7 +988,7 @@ function LandingPage() {
                   tap: { scale: 0.98 }
                 }}
                 onClick={() => window.location.href = 'https://buy.stripe.com/5kQ28s2NbaaWcMefADgEg07'}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
+                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-[#F2D07C] shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
                   <span className="absolute inset-0 bg-[#D8A545]" />
@@ -1164,6 +1014,149 @@ function LandingPage() {
                 </span>
               </motion.button>
             </motion.div>
+          </div>
+        </section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.08 }}
+          className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8"
+        >
+          <motion.h2 variants={sectionVariant} className="mx-auto mt-4 max-w-4xl text-center font-['Cinzel'] text-3xl leading-tight text-white sm:text-4xl md:text-6xl">
+            You've Wondered About These Things Before
+          </motion.h2>
+          <div className="mt-10 grid gap-4 sm:mt-14 md:grid-cols-5">
+            {questions.map((question, index) => (
+              <motion.div
+                key={question}
+                variants={sectionVariant}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group min-h-36 rounded-[1.5rem] border border-[#D8A545]/15 bg-[#0D0D0D]/70 p-5 backdrop-blur-xl transition hover:border-[#D8A545]/45 hover:bg-[#14110b] sm:min-h-48 sm:rounded-[2rem] sm:p-6"
+              >
+                <span className="font-['Cinzel'] text-4xl text-[#D8A545]/25 sm:text-5xl">0{index + 1}</span>
+                <p className="mt-5 font-['Cormorant_Garamond'] text-[1.65rem] leading-tight text-white sm:mt-8 sm:text-2xl">{question}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        <section id="inside" className="relative mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, rotateX: 8, y: 50 }}
+              whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative mx-auto w-full max-w-[520px]"
+            >
+              <div className="absolute inset-0 rotate-2 rounded-[1.5rem] border border-[#D8A545]/20 bg-[#D8A545]/5 sm:rotate-3 sm:rounded-[2rem]" />
+              <div className="relative rounded-[1.5rem] border border-[#D8A545]/35 bg-[#0D0D0D] p-4 shadow-[0_40px_120px_rgba(216,165,69,0.12)] sm:rounded-[2rem] sm:p-7">
+                <div className="rounded-[1.25rem] border border-[#D8A545]/20 bg-black p-5 sm:rounded-[1.5rem] sm:p-8">
+                  <div className="flex items-center justify-between border-b border-[#D8A545]/20 pb-6">
+                    <span className="text-xs uppercase tracking-[0.26em] text-[#D8A545] sm:tracking-[0.4em]">Confidential</span>
+                    <LockKeyhole className="h-5 w-5 text-[#F2D07C]" />
+                  </div>
+                  <h3 className="mt-10 font-['Cinzel'] text-3xl leading-tight text-white sm:mt-14 sm:text-4xl">Personal Life Blueprint</h3>
+                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">Prepared for one individual</p>
+                  <div className="mt-12 space-y-4">
+                    {blueprintPreview.slice(0, 5).map((item, index) => (
+                      <div key={item} className="flex items-center justify-between border-b border-white/10 pb-3">
+                        <span className="text-[#A0A0A0]">{item}</span>
+                        <span className="font-['Cinzel'] text-[#D8A545]">{String(index + 1).padStart(2, '0')}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-10 min-h-24 rounded-2xl border border-[#D8A545]/20 bg-[linear-gradient(135deg,rgba(216,165,69,.12),rgba(255,255,255,.02))] p-5 sm:mt-12">
+                    <p className="text-xs uppercase leading-relaxed tracking-[0.18em] text-[#D8A545] sm:tracking-[0.25em]">Private interpretation enclosed by ASHIMA</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="about" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+              <div className="absolute inset-8 rounded-full bg-[#D8A545]/15 blur-3xl" />
+              <img src={portrait} alt="Ashima Gautam creating personalized life reports" className="relative aspect-[4/5] w-full rounded-[2rem] border border-[#D8A545]/25 object-cover shadow-2xl grayscale-[20%] sm:rounded-[2.5rem]" loading="lazy" />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariant}>
+              <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">About Ashima</p>
+              <h2 className="mt-4 font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-6xl">Guidance Without Fear.</h2>
+              <p className="mt-6 font-['Cormorant_Garamond'] text-2xl leading-relaxed text-white sm:mt-7 sm:text-3xl">
+                Ashima combines Astrology, Numerology and Palmistry to help people understand themselves more clearly.
+              </p>
+              <p className="mt-5 text-lg leading-relaxed text-[#A0A0A0]">
+                Her work is designed for clarity, awareness, guidance and self-understanding — never pressure, superstition or manipulation.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {['No Fear Tactics', 'No Fake Remedies', 'No Gemstone Selling', 'Only Personalized Guidance'].map((badge) => (
+                  <span key={badge} className="rounded-full border border-[#D8A545]/25 bg-white/[0.035] px-4 py-2 text-sm text-[#F2D07C]">
+                    {badge}
+                  </span>
+                ))}
+              </div>
+              <a href="https://www.instagram.com/ashima_empowers" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 text-[#F2D07C] hover:text-white">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+                </svg>
+                @ashima_empowers
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="reviews" className="overflow-hidden py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 text-center lg:px-8">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">Private client notes</p>
+            <h2 className="mt-4 font-['Cinzel'] text-3xl sm:text-4xl md:text-6xl">Felt Written Specifically For Me</h2>
+          </div>
+          <div className="mx-4 mt-10 max-w-6xl rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-3 shadow-[0_0_80px_rgba(216,165,69,0.1)] backdrop-blur-2xl sm:mx-auto sm:mt-14 sm:rounded-[2.5rem] sm:p-4 md:p-8">
+            <div className="elfsight-app-5a7a8e6f-1515-45fa-8f33-81aa6506c964" data-elfsight-app-lazy />
+          </div>
+
+          {/* Handcrafted Luxury Client Testimonials */}
+          <div className="mx-auto max-w-7xl px-4 mt-12 grid gap-6 sm:grid-cols-3 lg:px-8">
+            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "The 10-Minute Video Report was incredibly accurate. Ashima picked up on career timing that played out exactly as she predicted. I love that I can watch it whenever I need guidance."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Rahul M., Delhi</p>
+            </div>
+
+            <div className="rounded-3xl border border-[#D8A545]/25 bg-[#D8A545]/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(216,165,69,0.05)]">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "My 60-Minute Complete Consultation with Ashima was life-changing. We did a deep dive into my Kundli, Palmistry, and Numerology. Being able to ask questions live gave me so much clarity."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#F2D07C] font-semibold">— Sneha R., Mumbai</p>
+            </div>
+
+            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "The 25-Minute Private Consultation was perfect. I had two very specific questions about my business transition, and Ashima gave me precise, actionable guidance without any fear tactics."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Arjun K., Bangalore</p>
+            </div>
           </div>
         </section>
 
