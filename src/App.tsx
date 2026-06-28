@@ -1006,12 +1006,12 @@ function LandingPage() {
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Recorded Video</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">
-                  10-Minute Personalized Video Report
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white flex items-center flex-wrap gap-x-2">
+                  10-Minute Personalized Video Report <span className="line-through text-xs font-normal text-[#A0A0A0]/60">(1:1)</span>
                 </h3>
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
-                  <span className="text-sm text-[#A0A0A0] line-through">₹3,999</span>
+                  <span className="text-sm text-[#A0A0A0] line-through">₹3999</span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-[#A0A0A0]">
                   Receive a personalized recorded video where Ashima analyzes your birth details using Astrology, Numerology and Palmistry and provides focused guidance tailored specifically to you.
@@ -1031,9 +1031,15 @@ function LandingPage() {
                   </div>
                 </div>
               </div>
-              <button
+              <motion.button
+                whileHover="hover"
+                whileTap="tap"
+                variants={{
+                  hover: { scale: 1.03, y: -2 },
+                  tap: { scale: 0.98 }
+                }}
                 onClick={goToPayment}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#F2D07C] cursor-pointer"
+                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
                   <span className="absolute inset-0 bg-[#D8A545]" />
@@ -1046,9 +1052,18 @@ function LandingPage() {
                   <span className="luxury-cta-spark luxury-cta-spark-three" />
                 </span>
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get My Video Report <ArrowRight className="h-3.5 w-3.5" />
+                  Get My Video Recording{" "}
+                  <motion.span
+                    variants={{
+                      hover: { x: 4 },
+                      tap: { x: 0 }
+                    }}
+                    className="inline-block"
+                  >
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </motion.span>
                 </span>
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Service 2 */}
@@ -1061,7 +1076,7 @@ function LandingPage() {
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Live Session</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation</h3>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation (1:1)</h3>
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
                 </div>
@@ -1087,9 +1102,15 @@ function LandingPage() {
                   </div>
                 </div>
               </div>
-              <button
+              <motion.button
+                whileHover="hover"
+                whileTap="tap"
+                variants={{
+                  hover: { scale: 1.03, y: -2 },
+                  tap: { scale: 0.98 }
+                }}
                 onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_25MIN || 'https://buy.stripe.com/test-25min'}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#F2D07C] cursor-pointer"
+                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
                   <span className="absolute inset-0 bg-[#D8A545]" />
@@ -1102,9 +1123,18 @@ function LandingPage() {
                   <span className="luxury-cta-spark luxury-cta-spark-three" />
                 </span>
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Book 25-Min Consultation <ArrowRight className="h-3.5 w-3.5" />
+                  Book 25-Min Consultation{" "}
+                  <motion.span
+                    variants={{
+                      hover: { x: 4 },
+                      tap: { x: 0 }
+                    }}
+                    className="inline-block"
+                  >
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </motion.span>
                 </span>
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Service 3 (Highlighted) */}
@@ -1120,7 +1150,7 @@ function LandingPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#F2D07C]">Premium Experience</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation</h3>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation (1:1)</h3>
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
                 </div>
@@ -1146,9 +1176,15 @@ function LandingPage() {
                   </div>
                 </div>
               </div>
-              <button
+              <motion.button
+                whileHover="hover"
+                whileTap="tap"
+                variants={{
+                  hover: { scale: 1.03, y: -2 },
+                  tap: { scale: 0.98 }
+                }}
                 onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_60MIN || 'https://buy.stripe.com/test-60min'}
-                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#F2D07C] cursor-pointer"
+                className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
                   <span className="absolute inset-0 bg-[#D8A545]" />
@@ -1161,9 +1197,18 @@ function LandingPage() {
                   <span className="luxury-cta-spark luxury-cta-spark-three" />
                 </span>
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Book Complete Consultation <ArrowRight className="h-3.5 w-3.5" />
+                  Book Complete Consultation{" "}
+                  <motion.span
+                    variants={{
+                      hover: { x: 4 },
+                      tap: { x: 0 }
+                    }}
+                    className="inline-block"
+                  >
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </motion.span>
                 </span>
-              </button>
+              </motion.button>
             </motion.div>
           </div>
         </section>
