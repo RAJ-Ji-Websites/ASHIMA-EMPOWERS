@@ -37,7 +37,6 @@ const benefits = [
   'Focused Career & Business Insights',
   'Deep Relationship & Compatibility Guidance',
   'Life Purpose & Destiny Path Clarity',
-  'Unified Astrology, Numerology & Palmistry',
 ]
 
 const questions = [
@@ -767,7 +766,28 @@ function LandingPage() {
       </header>
 
       <main id="top" className="relative z-10">
-        <section className="mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-4 pb-16 pt-28 sm:px-5 sm:pb-20 sm:pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14 lg:px-8 lg:pb-28 lg:pt-36">
+        <section className="mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-4 pb-16 pt-28 sm:px-5 sm:pb-20 sm:pt-32 lg:grid-cols-[0.98fr_1.02fr] lg:gap-14 lg:px-8 lg:pb-28 lg:pt-36">
+          <motion.div style={{ y: portraitY }} className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
+            <div className="relative aspect-[0.86] min-h-[390px] overflow-hidden rounded-[2rem] border border-[#D8A545]/25 bg-[#0D0D0D] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.65)] min-[380px]:min-h-[430px] sm:min-h-[540px] sm:rounded-[2.5rem] sm:p-4">
+              <ZodiacWheel />
+              <div className="absolute inset-3 z-10 overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-b from-white/5 to-black/40 sm:inset-4 sm:rounded-[2rem]">
+                <img src={portrait} alt="Ashima Gautam astrologer numerologist and palm reader" className="h-full w-full object-cover object-center mix-blend-luminosity contrast-110" fetchPriority="high" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+              </div>
+              <div className="absolute bottom-5 left-5 right-5 z-20 rounded-3xl border border-[#D8A545]/30 bg-black/45 p-4 backdrop-blur-2xl sm:bottom-8 sm:left-8 sm:right-8 sm:p-5">
+                <p className="font-['Cinzel'] text-xl text-white sm:text-2xl">Ashima Gautam</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-[#D8A545] sm:text-sm sm:tracking-[0.18em] md:tracking-[0.24em]">Astrologer + Numerologist + Palm Reader</p>
+              </div>
+            </div>
+
+            <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute left-1 top-12 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-left-8 sm:top-20 sm:px-4 sm:py-3 sm:text-sm">
+              ✨ Personalized For You
+            </motion.div>
+            <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute right-1 top-1/2 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-right-7 sm:px-4 sm:py-3 sm:text-sm">
+              🎥 Video Recording Included
+            </motion.div>
+          </motion.div>
+
           <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }} className="relative">
             <motion.div
               variants={sectionVariant}
@@ -823,27 +843,6 @@ function LandingPage() {
               ))}
             </motion.div>
           </motion.div>
-
-          <motion.div style={{ y: portraitY }} className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
-            <div className="relative aspect-[0.86] min-h-[390px] overflow-hidden rounded-[2rem] border border-[#D8A545]/25 bg-[#0D0D0D] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.65)] min-[380px]:min-h-[430px] sm:min-h-[540px] sm:rounded-[2.5rem] sm:p-4">
-              <ZodiacWheel />
-              <div className="absolute inset-3 z-10 overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-b from-white/5 to-black/40 sm:inset-4 sm:rounded-[2rem]">
-                <img src={portrait} alt="Ashima Gautam astrologer numerologist and palm reader" className="h-full w-full object-cover object-center mix-blend-luminosity contrast-110" fetchPriority="high" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-              </div>
-              <div className="absolute bottom-5 left-5 right-5 z-20 rounded-3xl border border-[#D8A545]/30 bg-black/45 p-4 backdrop-blur-2xl sm:bottom-8 sm:left-8 sm:right-8 sm:p-5">
-                <p className="font-['Cinzel'] text-xl text-white sm:text-2xl">Ashima Gautam</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-[#D8A545] sm:text-sm sm:tracking-[0.18em] md:tracking-[0.24em]">Astrologer + Numerologist + Palm Reader</p>
-              </div>
-            </div>
-
-            <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute left-1 top-12 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-left-8 sm:top-20 sm:px-4 sm:py-3 sm:text-sm">
-              ✨ Personalized For You
-            </motion.div>
-            <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute right-1 top-1/2 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-right-7 sm:px-4 sm:py-3 sm:text-sm">
-              🎥 Video Recording Included
-            </motion.div>
-          </motion.div>
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
@@ -863,11 +862,11 @@ function LandingPage() {
                   </div>
                 </div>
                 <div className="rounded-[1.5rem] border border-[#D8A545]/35 bg-[#D8A545]/10 p-5 shadow-[0_0_55px_rgba(216,165,69,0.12)] sm:rounded-[2rem] sm:p-7">
-                  <h3 className="font-['Cinzel'] text-xl text-[#F2D07C]">Ashima's Blueprint</h3>
+                  <h3 className="font-['Cinzel'] text-xl text-[#F2D07C]">Ashima's Guidance</h3>
                   <div className="mt-6 space-y-4 text-white">
                     <p>✅ Custom-Made</p>
                     <p>✅ Human Interpretation</p>
-                    <p>✅ Detailed</p>
+                    <p>✅ Live & Recorded Formats</p>
                   </div>
                 </div>
               </div>
