@@ -33,16 +33,16 @@ const stripePaymentLink = import.meta.env.VITE_STRIPE_PAYMENT_LINK || 'https://b
 
 const benefits = [
   'Detailed Kundli Analysis',
-  'Personalized 10-Minute Video Recording',
-  'Career Insights',
-  'Relationship Guidance',
-  'Life Purpose Clarity',
-  'Astrology + Numerology',
+  'Recorded Video Reports & Live One-on-One Consultations',
+  'Focused Career & Business Insights',
+  'Deep Relationship & Compatibility Guidance',
+  'Life Purpose & Destiny Path Clarity',
+  'Unified Astrology, Numerology & Palmistry',
 ]
 
 const questions = [
   'When will my career grow?',
-  'When I am not happy in my relationship?',
+  'Why am I not happy in my relationship?',
   'What business should I start?',
   'When will life get better?',
   'When will I get my dream job?',
@@ -54,8 +54,6 @@ const blueprintPreview = [
   'Life Purpose',
   'Strengths',
   'Challenges',
-  'Opportunities',
-  'Future Trends',
 ]
 
 const faqs = [
@@ -93,8 +91,8 @@ const faqs = [
 
 const trustMessages = [
   '✨ Personalized For You',
-  '🎥 Video Recording Included',
-  '⭐ Limited Offer ₹499',
+  '🎥 Custom Video Reports',
+  '💬 Live 1-on-1 Consultations',
   '📖 Detailed Life Analysis',
 ]
 
@@ -727,10 +725,10 @@ function LandingPage() {
           </div>
 
           <button
-            onClick={goToPayment}
+            onClick={scrollToOffer}
             className="hidden rounded-full border border-[#F2D07C]/40 bg-[#D8A545] px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-black shadow-[0_0_35px_rgba(216,165,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#F2D07C] lg:inline-flex"
           >
-            Get My Report
+            Explore Services
           </button>
 
           <button
@@ -757,11 +755,11 @@ function LandingPage() {
               <button
                 onClick={() => {
                   setMenuOpen(false)
-                  goToPayment()
+                  scrollToOffer()
                 }}
                 className="rounded-full bg-[#D8A545] px-5 py-3 text-sm font-bold uppercase tracking-[0.18em] text-black"
               >
-                Get My Report
+                Explore Services
               </button>
             </div>
           </motion.div>
@@ -786,7 +784,7 @@ function LandingPage() {
             </motion.h1>
 
             <motion.p variants={sectionVariant} className="mt-6 max-w-2xl font-['Cormorant_Garamond'] text-[1.45rem] leading-relaxed text-[#d8d8d8] sm:mt-8 sm:text-3xl">
-              A confidential personalized 10-Minute Video life report created by ASHIMA specifically for one individual — you.
+              Confidential, deeply personalized Astrology, Numerology, and Palmistry guidance tailored specifically to you. Speak with Ashima directly or receive a custom video blueprint.
             </motion.p>
 
             <motion.div variants={sectionVariant} className="mt-9 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center">
@@ -805,15 +803,12 @@ function LandingPage() {
                   <span className="luxury-cta-spark luxury-cta-spark-three" />
                 </span>
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Get My Personalized Life Blueprint <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  Explore Personalized Guidance <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </span>
               </button>
               <div className="w-full rounded-2xl border border-[#D8A545]/20 bg-[#0D0D0D]/80 px-5 py-3 backdrop-blur-xl sm:w-auto">
-                <div className="flex items-end gap-3">
-                  <span className="text-lg text-[#A0A0A0] line-through">₹7,999</span>
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
-                </div>
-                <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[#A0A0A0]">Limited-Time-Offer</p>
+                <p className="font-['Cinzel'] text-xl text-[#F2D07C]">Premium Services</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.22em] text-[#A0A0A0]">Options from ₹499</p>
               </div>
             </motion.div>
 
@@ -982,58 +977,152 @@ function LandingPage() {
           <div className="mx-4 mt-10 max-w-6xl rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-3 shadow-[0_0_80px_rgba(216,165,69,0.1)] backdrop-blur-2xl sm:mx-auto sm:mt-14 sm:rounded-[2.5rem] sm:p-4 md:p-8">
             <div className="elfsight-app-5a7a8e6f-1515-45fa-8f33-81aa6506c964" data-elfsight-app-lazy />
           </div>
+
+          {/* Handcrafted Luxury Client Testimonials */}
+          <div className="mx-auto max-w-7xl px-4 mt-12 grid gap-6 sm:grid-cols-3 lg:px-8">
+            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "The 10-Minute Video Report was incredibly accurate. Ashima picked up on career timing that played out exactly as she predicted. I love that I can watch it whenever I need guidance."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Rahul M., Delhi</p>
+            </div>
+
+            <div className="rounded-3xl border border-[#D8A545]/25 bg-[#D8A545]/5 p-6 backdrop-blur-xl shadow-[0_0_40px_rgba(216,165,69,0.05)]">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "My 60-Minute Complete Consultation with Ashima was life-changing. We did a deep dive into my Kundli, Palmistry, and Numerology. Being able to ask questions live gave me so much clarity."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#F2D07C] font-semibold">— Sneha R., Mumbai</p>
+            </div>
+
+            <div className="rounded-3xl border border-[#D8A545]/15 bg-[#0D0D0D]/60 p-6 backdrop-blur-xl">
+              <div className="flex items-center gap-1 text-[#F2D07C] mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-[#D8A545] text-[#D8A545]" />
+                ))}
+              </div>
+              <p className="font-['Cormorant_Garamond'] text-xl italic leading-relaxed text-white">
+                "The 25-Minute Private Consultation was perfect. I had two very specific questions about my business transition, and Ashima gave me precise, actionable guidance without any fear tactics."
+              </p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[#D8A545] font-semibold">— Arjun K., Bangalore</p>
+            </div>
+          </div>
         </section>
 
         <section id="offer" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative overflow-hidden rounded-[2rem] border border-[#D8A545]/35 bg-[radial-gradient(circle_at_top,rgba(216,165,69,0.18),rgba(13,13,13,0.98)_45%)] p-5 text-center shadow-[0_0_120px_rgba(216,165,69,0.15)] sm:rounded-[3rem] sm:p-7 md:p-14"
-          >
-            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#F2D07C] to-transparent" />
-            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.4em]">LIMITED-TIME OFFER</p>
-            <h2 className="mx-auto mt-5 max-w-4xl font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-7xl">Unlock Your Personalized Life Blueprint</h2>
-            <div className="mt-8 flex items-end justify-center gap-4">
-              <span className="text-xl text-[#A0A0A0] line-through sm:text-2xl">₹7,999</span>
-              <span className="font-['Cinzel'] text-6xl text-[#F2D07C] sm:text-7xl">₹499</span>
-            </div>
-            <p className="mx-auto mt-5 max-w-2xl font-['Cormorant_Garamond'] text-[1.55rem] leading-relaxed text-white sm:text-2xl">
-              Custom-made by ASHIMA. Not AI-generated. Delivered within 2–5 working days.
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.4em]">CHOOSE YOUR EXPERIENCE</p>
+            <h2 className="mx-auto mt-4 max-w-4xl font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-6xl text-white">
+              Choose The Guidance That Fits Your Needs
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl font-['Cormorant_Garamond'] text-xl sm:text-2xl text-[#A0A0A0]">
+              Receive custom-crafted wisdom from Ashima, tailored precisely to your birth alignment and palmistry. Choose the format that resonates with you.
             </p>
-            <button
-              onClick={goToPayment}
-              className="luxury-cta group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 px-5 py-5 text-center text-[11px] font-black uppercase tracking-[0.1em] text-black shadow-[0_0_55px_rgba(216,165,69,0.28)] transition hover:-translate-y-1 sm:w-auto sm:px-10 sm:py-6 sm:text-sm sm:tracking-[0.16em]"
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3 items-stretch">
+            {/* Service 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-6 sm:p-8 backdrop-blur-2xl transition hover:border-[#D8A545]/45 hover:shadow-[0_0_50px_rgba(216,165,69,0.08)]"
             >
-              <span className="absolute inset-0 overflow-hidden rounded-full">
-                <span className="absolute inset-0 bg-[#D8A545]" />
-                <span className="luxury-cta-orb luxury-cta-orb-one" />
-                <span className="luxury-cta-orb luxury-cta-orb-two" />
-                <span className="luxury-cta-glow" />
-                <span className="luxury-cta-lines" />
-                <span className="luxury-cta-spark luxury-cta-spark-one" />
-                <span className="luxury-cta-spark luxury-cta-spark-two" />
-                <span className="luxury-cta-spark luxury-cta-spark-three" />
-              </span>
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                Get My Report Now <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </span>
-            </button>
-            <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
-              {['Prepared by ASHIMA', 'Not AI Generated', 'Personalized 10-Minute Video Recording', 'Delivered within 2–5 working days'].map((highlight) => (
-                <span key={highlight} className="rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#F2D07C] sm:px-4 sm:text-xs sm:tracking-[0.18em]">
-                  {highlight}
-                </span>
-              ))}
-            </div>
-            <div className="mx-auto mt-10 grid max-w-4xl gap-3 text-left md:grid-cols-2">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/25 px-4 py-3">
-                  <Check className="h-5 w-5 text-[#D8A545]" /> {benefit}
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Recorded Video</p>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">10-Minute Personalized Video Report</h3>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
+                  <span className="text-sm text-[#A0A0A0] line-through">₹7,999</span>
                 </div>
-              ))}
-            </div>
-          </motion.div>
+                <p className="mt-6 text-sm leading-relaxed text-[#D7D7D7]">
+                  Receive a personalized recorded video where Ashima analyzes your birth details using Astrology, Numerology and Palmistry and provides focused guidance tailored specifically to you.
+                </p>
+              </div>
+              <button
+                onClick={goToPayment}
+                className="mt-8 w-full rounded-full bg-[#D8A545]/10 border border-[#D8A545]/35 py-4 text-xs font-black uppercase tracking-[0.14em] text-[#F2D07C] transition hover:bg-[#D8A545] hover:text-black cursor-pointer"
+              >
+                Get My Video Report
+              </button>
+            </motion.div>
+
+            {/* Service 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-6 sm:p-8 backdrop-blur-2xl transition hover:border-[#D8A545]/45 hover:shadow-[0_0_50px_rgba(216,165,69,0.08)]"
+            >
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Live Session</p>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation</h3>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
+                </div>
+                <p className="mt-6 text-sm leading-relaxed text-[#D7D7D7]">
+                  Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
+                </p>
+              </div>
+              <button
+                onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_25MIN || 'https://buy.stripe.com/test-25min'}
+                className="mt-8 w-full rounded-full bg-[#D8A545]/10 border border-[#D8A545]/35 py-4 text-xs font-black uppercase tracking-[0.14em] text-[#F2D07C] transition hover:bg-[#D8A545] hover:text-black cursor-pointer"
+              >
+                Book 25-Min Consultation
+              </button>
+            </motion.div>
+
+            {/* Service 3 (Highlighted) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-[#D8A545]/45 bg-[radial-gradient(circle_at_top,rgba(216,165,69,0.18),rgba(13,13,13,0.98)_55%)] p-6 sm:p-8 shadow-[0_0_80px_rgba(216,165,69,0.15)] backdrop-blur-2xl"
+            >
+              <div className="absolute right-6 top-6 rounded-full bg-[#D8A545] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-black">
+                Most Popular
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-[#F2D07C]">Premium Experience</p>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation</h3>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
+                </div>
+                <p className="mt-6 text-sm leading-relaxed text-white/90">
+                  A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
+                </p>
+              </div>
+              <button
+                onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_60MIN || 'https://buy.stripe.com/test-60min'}
+                className="luxury-cta group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-black shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:-translate-y-0.5 hover:bg-[#F2D07C] cursor-pointer"
+              >
+                <span className="absolute inset-0 overflow-hidden rounded-full">
+                  <span className="absolute inset-0 bg-[#D8A545]" />
+                  <span className="luxury-cta-orb luxury-cta-orb-one" />
+                  <span className="luxury-cta-orb luxury-cta-orb-two" />
+                  <span className="luxury-cta-glow" />
+                  <span className="luxury-cta-lines" />
+                  <span className="luxury-cta-spark luxury-cta-spark-one" />
+                  <span className="luxury-cta-spark luxury-cta-spark-two" />
+                  <span className="luxury-cta-spark luxury-cta-spark-three" />
+                </span>
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Book Complete Consultation <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </button>
+            </motion.div>
+          </div>
         </section>
 
         <section id="faq" className="mx-auto max-w-4xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
@@ -1066,10 +1155,13 @@ function LandingPage() {
             <Eye className="mx-auto mb-8 h-10 w-10 text-[#F2D07C]" />
             <h2 className="font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-7xl">
               Your Future Is Already Written.
-              <span className="block text-[#F2D07C]">Now Read It.</span>
+              <span className="block text-[#F2D07C]">Choose Your Path.</span>
             </h2>
-            <button onClick={goToPayment} className="mt-10 w-full rounded-full bg-[#D8A545] px-5 py-5 text-xs font-black uppercase tracking-[0.12em] text-black transition hover:-translate-y-1 hover:bg-[#F2D07C] sm:w-auto sm:px-9 sm:text-sm sm:tracking-[0.18em]">
-              Get My Personalized Life Blueprint · ₹499
+            <p className="mx-auto mt-6 max-w-2xl font-['Cormorant_Garamond'] text-xl sm:text-2xl text-[#A0A0A0]">
+              Whether you prefer a private custom video report or a live, in-depth personal conversation, find the guidance that best matches your needs.
+            </p>
+            <button onClick={scrollToOffer} className="mt-10 w-full rounded-full bg-[#D8A545] px-5 py-5 text-xs font-black uppercase tracking-[0.12em] text-black transition hover:-translate-y-1 hover:bg-[#F2D07C] sm:w-auto sm:px-9 sm:text-sm sm:tracking-[0.18em] cursor-pointer">
+              Choose Your Guidance Service
             </button>
           </motion.div>
         </section>
@@ -1090,10 +1182,10 @@ function LandingPage() {
         <div className="flex items-center justify-between gap-3">
           <div className="hidden items-center gap-5 pl-5 lg:flex">
             <div>
-              <p className="font-['Cinzel'] text-sm text-white">Life Blueprint</p>
-              <p className="text-xs text-[#A0A0A0]">Video Recording</p>
+              <p className="font-['Cinzel'] text-sm text-white">Personalized Guidance</p>
+              <p className="text-xs text-[#A0A0A0]">By Ashima Gautam</p>
             </div>
-            <p className="text-sm text-[#A0A0A0] line-through">₹7,999</p>
+            <p className="text-sm text-[#A0A0A0]">Options from</p>
             <p className="font-['Cinzel'] text-2xl text-[#F2D07C]">₹499</p>
             <p className="text-sm text-[#F2D07C]">{trustMessages[messageIndex]}</p>
           </div>
@@ -1102,8 +1194,8 @@ function LandingPage() {
             <p className="truncate text-xs text-[#F2D07C]">{trustMessages[messageIndex]}</p>
           </div>
           <button onClick={scrollToOffer} className="shrink-0 rounded-full bg-[#D8A545] px-4 py-4 text-[11px] font-black uppercase tracking-[0.08em] text-black transition hover:bg-[#F2D07C] sm:px-5 sm:text-xs sm:tracking-[0.12em] md:px-7 md:py-4.5">
-            <span className="hidden lg:inline">Unlock My Report →</span>
-            <span className="lg:hidden">Get Report →</span>
+            <span className="hidden lg:inline">Choose Your Service →</span>
+            <span className="lg:hidden">Services →</span>
           </button>
         </div>
       </motion.div>
