@@ -783,9 +783,6 @@ function LandingPage() {
             <motion.div animate={{ y: [0, -12, 0] }} transition={{ duration: 5, repeat: Infinity }} className="absolute left-1 top-12 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-left-8 sm:top-20 sm:px-4 sm:py-3 sm:text-sm">
               ✨ Personalized For You
             </motion.div>
-            <motion.div animate={{ y: [0, 12, 0] }} transition={{ duration: 6, repeat: Infinity }} className="absolute right-1 top-1/2 z-30 rounded-2xl border border-[#D8A545]/25 bg-[#050505]/75 px-3 py-2 text-xs text-white backdrop-blur-xl sm:-right-7 sm:px-4 sm:py-3 sm:text-sm">
-              🎥 Video Recording Included
-            </motion.div>
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }} className="relative">
@@ -845,35 +842,6 @@ function LandingPage() {
           </motion.div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariant} className="rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/75 p-5 backdrop-blur-2xl sm:rounded-[2.5rem] sm:p-6 md:p-10 lg:p-14">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">Personalization</p>
-                <h2 className="mt-4 font-['Cinzel'] text-3xl leading-tight sm:text-4xl md:text-5xl">Prepared Specifically For You</h2>
-              </div>
-              <div className="grid gap-5 md:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-white/10 bg-black/35 p-5 sm:rounded-[2rem] sm:p-7">
-                  <h3 className="font-['Cinzel'] text-xl text-white">Generic Reports</h3>
-                  <div className="mt-6 space-y-4 text-[#A0A0A0]">
-                    <p>❌ Same for everyone</p>
-                    <p>❌ Ai Generated</p>
-                    <p>❌ Surface-level</p>
-                  </div>
-                </div>
-                <div className="rounded-[1.5rem] border border-[#D8A545]/35 bg-[#D8A545]/10 p-5 shadow-[0_0_55px_rgba(216,165,69,0.12)] sm:rounded-[2rem] sm:p-7">
-                  <h3 className="font-['Cinzel'] text-xl text-[#F2D07C]">Ashima's Guidance</h3>
-                  <div className="mt-6 space-y-4 text-white">
-                    <p>✅ Custom-Made</p>
-                    <p>✅ Human Interpretation</p>
-                    <p>✅ Live & Recorded Formats</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -916,7 +884,7 @@ function LandingPage() {
                     <LockKeyhole className="h-5 w-5 text-[#F2D07C]" />
                   </div>
                   <h3 className="mt-10 font-['Cinzel'] text-3xl leading-tight text-white sm:mt-14 sm:text-4xl">Personal Life Blueprint</h3>
-                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">Prepared for one individual</p>
+                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">What you get on 1:1 Consultation</p>
                   <div className="mt-12 space-y-4">
                     {blueprintPreview.slice(0, 5).map((item, index) => (
                       <div key={item} className="flex items-center justify-between border-b border-white/10 pb-3">
@@ -1043,9 +1011,20 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
                   <span className="text-sm text-[#A0A0A0] line-through">₹7,999</span>
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-[#D7D7D7]">
-                  Receive a personalized recorded video where Ashima analyzes your birth details using Astrology, Numerology and Palmistry and provides focused guidance tailored specifically to you.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Astrology + Numerology will be analysed</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-red-500 text-sm">❌</span>
+                    <span>no 1:1 Interaction</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-red-500 text-sm">❌</span>
+                    <span>no voice call / video call</span>
+                  </div>
+                </div>
               </div>
               <button
                 onClick={goToPayment}
@@ -1067,11 +1046,26 @@ function LandingPage() {
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Live Session</p>
                 <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation</h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-[#D7D7D7]">
-                  Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>voice/video call</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Astrology + Numerology + Palmistry Analysis</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Relevant for 2-3 Questions</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>1:1 Consultation</span>
+                  </div>
+                </div>
               </div>
               <button
                 onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_25MIN || 'https://buy.stripe.com/test-25min'}
@@ -1096,11 +1090,26 @@ function LandingPage() {
                 <p className="text-xs uppercase tracking-[0.18em] text-[#F2D07C]">Premium Experience</p>
                 <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation</h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-white/90">
-                  A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>comprehensive one-on-one consultation</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>detailed Kundli analysis, Astrology, Numerology, Palmistry</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>Relevant if want to have a deep soulfull session</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>Life/Spiritual Guidance</span>
+                  </div>
+                </div>
               </div>
               <button
                 onClick={() => window.location.href = import.meta.env.VITE_STRIPE_PAYMENT_LINK_60MIN || 'https://buy.stripe.com/test-60min'}
@@ -1193,8 +1202,8 @@ function LandingPage() {
             <p className="truncate text-xs text-[#F2D07C]">{trustMessages[messageIndex]}</p>
           </div>
           <button onClick={scrollToOffer} className="shrink-0 rounded-full bg-[#D8A545] px-4 py-4 text-[11px] font-black uppercase tracking-[0.08em] text-black transition hover:bg-[#F2D07C] sm:px-5 sm:text-xs sm:tracking-[0.12em] md:px-7 md:py-4.5">
-            <span className="hidden lg:inline">Choose Your Service →</span>
-            <span className="lg:hidden">Services →</span>
+            <span className="hidden lg:inline">Book Now →</span>
+            <span className="lg:hidden">Book Now</span>
           </button>
         </div>
       </motion.div>
