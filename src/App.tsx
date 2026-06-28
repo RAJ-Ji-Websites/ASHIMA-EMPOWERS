@@ -884,7 +884,7 @@ function LandingPage() {
                     <LockKeyhole className="h-5 w-5 text-[#F2D07C]" />
                   </div>
                   <h3 className="mt-10 font-['Cinzel'] text-3xl leading-tight text-white sm:mt-14 sm:text-4xl">Personal Life Blueprint</h3>
-                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">What you get on 1:1 Consultation</p>
+                  <p className="mt-4 font-['Cormorant_Garamond'] text-2xl text-[#F2D07C] sm:mt-5">Prepared for one individual</p>
                   <div className="mt-12 space-y-4">
                     {blueprintPreview.slice(0, 5).map((item, index) => (
                       <div key={item} className="flex items-center justify-between border-b border-white/10 pb-3">
@@ -1007,7 +1007,7 @@ function LandingPage() {
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Recorded Video</p>
                 <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">
-                  10-Minute Personalized Video Report <span className="line-through opacity-50 ml-1 text-lg">[1:1]</span>
+                  10-Minute Personalized Video Report
                 </h3>
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
@@ -1046,7 +1046,7 @@ function LandingPage() {
                   <span className="luxury-cta-spark luxury-cta-spark-three" />
                 </span>
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get My Video Recording <ArrowRight className="h-3.5 w-3.5" />
+                  Get My Video Report <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </button>
             </motion.div>
@@ -1061,9 +1061,9 @@ function LandingPage() {
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Live Session</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation (1:1)</h3>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation</h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-[#A0A0A0]">
                   Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
@@ -1120,9 +1120,9 @@ function LandingPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#F2D07C]">Premium Experience</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation (1:1)</h3>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation</h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-white/80">
                   A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
