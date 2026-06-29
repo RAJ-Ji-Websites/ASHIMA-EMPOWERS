@@ -31,6 +31,22 @@ const portrait = '/uploads/ashima-portrait.webp'
 const brandLogo = '/ashima-logo.webp'
 const stripePaymentLink = import.meta.env.VITE_STRIPE_PAYMENT_LINK || 'https://buy.stripe.com/8x200kafD3MydQi603gEg08'
 
+const paymentOptions: Record<
+  '25min' | '60min',
+  { title: string; india: { label: string; flags: string; url: string }; foreign: { label: string; flags: string; url: string } }
+> = {
+  '25min': {
+    title: '25-Minute Private Consultation',
+    india: { label: 'Indian Clients (UPI)', flags: '🇮🇳', url: 'https://buy.stripe.com/9B6cN69bz5UGeUm2NRgEg0a' },
+    foreign: { label: 'Foreign Clients', flags: '🇨🇦 🇦🇺 🇬🇧 🇺🇸', url: 'https://buy.stripe.com/3cI4gAevT3MyfYqdsvgEg09' },
+  },
+  '60min': {
+    title: '60-Minute Complete Consultation',
+    india: { label: 'Indian Clients (UPI)', flags: '🇮🇳', url: 'https://buy.stripe.com/bJe3cw0F3dn8aE688bgEg0b' },
+    foreign: { label: 'Foreign Clients', flags: '🇨🇦 🇦🇺 🇬🇧 🇺🇸', url: 'https://buy.stripe.com/5kQ28s2NbaaWcMefADgEg07' },
+  },
+}
+
 const benefits = [
   'Detailed Kundli Analysis',
   'Recorded Video Reports & Live One-on-One Consultations',
@@ -658,6 +674,7 @@ function LandingPage() {
   const [showSticky, setShowSticky] = useState(false)
   const [messageIndex, setMessageIndex] = useState(0)
   const [openFaq, setOpenFaq] = useState(0)
+  const [paymentModal, setPaymentModal] = useState<null | '25min' | '60min'>(null)
   const { scrollYProgress } = useScroll()
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, -70])
 
@@ -909,7 +926,7 @@ function LandingPage() {
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = 'https://buy.stripe.com/3cI4gAevT3MyfYqdsvgEg09'}
+                onClick={() => setPaymentModal('25min')}
                 className="w-full mt-8 rounded-full bg-[#D8A545]/10 border border-[#D8A545]/45 hover:bg-[#D8A545] hover:text-black py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-[#F2D07C] transition-all duration-300 shadow-[0_0_30px_rgba(216,165,69,0.05)] cursor-pointer"
               >
                 <span className="flex items-center justify-center gap-2">
@@ -949,7 +966,7 @@ function LandingPage() {
                   hover: { scale: 1.03, y: -2 },
                   tap: { scale: 0.98 }
                 }}
-                onClick={() => window.location.href = 'https://buy.stripe.com/5kQ28s2NbaaWcMefADgEg07'}
+                onClick={() => setPaymentModal('60min')}
                 className="luxury-cta no-offer-badge group relative mt-8 w-full overflow-visible rounded-full border border-[#F2D07C]/80 py-4 text-center text-xs font-black uppercase tracking-[0.12em] text-[#F2D07C] shadow-[0_0_40px_rgba(216,165,69,0.22)] transition hover:bg-[#F2D07C] cursor-pointer"
               >
                 <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -1196,7 +1213,88 @@ function LandingPage() {
           </button>
         </div>
       </motion.div>
+
+      {paymentModal && (
+        <PaymentModal
+          type={paymentModal}
+          onClose={() => setPaymentModal(null)}
+        />
+      )}
     </div>
+  )
+}
+
+function PaymentModal({ type, onClose }: { type: '25min' | '60min'; onClose: () => void }) {
+  const option = paymentOptions[type]
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      className="fixed inset-0 z-[100] grid place-items-center bg-black/75 px-4 py-8 backdrop-blur-md"
+    >
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0, y: 20 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.85, opacity: 0, y: 20 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-[#D8A545]/40 bg-[#0D0D0D] p-6 shadow-[0_0_90px_rgba(216,165,69,0.25)] backdrop-blur-2xl sm:p-8"
+      >
+        <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-[#D8A545]/15 blur-[80px]" />
+
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-20 grid h-9 w-9 place-items-center rounded-full border border-[#D8A545]/25 bg-white/5 text-[#A0A0A0] transition hover:text-white"
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
+
+        <div className="relative z-10 text-center">
+          <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545]">Select Payment Option</p>
+          <h3 className="mt-3 font-['Cinzel'] text-2xl text-white sm:text-3xl">{option.title}</h3>
+          <p className="mt-3 text-sm text-[#A0A0A0]">Choose your preferred payment method below to continue.</p>
+          <div className="mx-auto mt-5 h-px max-w-[180px] bg-gradient-to-r from-transparent via-[#F2D07C] to-transparent" />
+        </div>
+
+        <div className="relative z-10 mt-7 space-y-4">
+          <a
+            href={option.india.url}
+            className="group flex items-center justify-between gap-4 rounded-2xl border border-[#D8A545]/30 bg-[#D8A545]/8 p-5 transition hover:border-[#F2D07C]/70 hover:bg-[#D8A545]/15"
+          >
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">{option.india.flags}</span>
+              <div>
+                <p className="font-['Cinzel'] text-lg text-white">{option.india.label}</p>
+                <p className="text-xs text-[#A0A0A0]">Pay via UPI / Stripe</p>
+              </div>
+            </div>
+            <ArrowRight className="h-5 w-5 text-[#F2D07C] transition group-hover:translate-x-1" />
+          </a>
+
+          <a
+            href={option.foreign.url}
+            className="group flex items-center justify-between gap-4 rounded-2xl border border-[#D8A545]/30 bg-[#D8A545]/8 p-5 transition hover:border-[#F2D07C]/70 hover:bg-[#D8A545]/15"
+          >
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">{option.foreign.flags}</span>
+              <div>
+                <p className="font-['Cinzel'] text-lg text-white">{option.foreign.label}</p>
+                <p className="text-xs text-[#A0A0A0]">International payment via Stripe</p>
+              </div>
+            </div>
+            <ArrowRight className="h-5 w-5 text-[#F2D07C] transition group-hover:translate-x-1" />
+          </a>
+        </div>
+
+        <p className="relative z-10 mt-6 text-center text-[11px] text-[#A0A0A0]">
+          🔒 Secure payment powered by Stripe
+        </p>
+      </motion.div>
+    </motion.div>
   )
 }
 
