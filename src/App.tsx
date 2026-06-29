@@ -845,7 +845,13 @@ function LandingPage() {
           </motion.div>
         </section>
 
-        <section id="offer" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-20 lg:px-8">
+        <section id="offer" className="mx-auto max-w-7xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <p className="text-xs uppercase tracking-[0.24em] text-[#D8A545] sm:tracking-[0.35em]">Premium Offerings</p>
+            <h2 className="mt-4 font-['Cinzel'] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+              Choose The Guidance That Fits Your Needs
+            </h2>
+          </div>
           <div className="grid gap-8 md:grid-cols-3 items-stretch">
             {/* Service 1 */}
             <motion.div
@@ -863,9 +869,6 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
                   <span className="text-sm text-[#A0A0A0] line-through">₹3999</span>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-[#A0A0A0]">
-                  Receive a personalized recorded video where Ashima analyzes your birth details using Astrology, Numerology and Palmistry and provides focused guidance tailored specifically to you.
-                </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
                     <span className="text-[#D8A545] text-base">✦</span>
@@ -903,13 +906,11 @@ function LandingPage() {
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#D8A545]">Live Session</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation (1:1)</h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">25-Minute Private Consultation (One-to-One)</h3>
+                <div className="mt-6 flex items-center gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD</span>
+                  <span className="text-2xl" title="Canada">🇨🇦</span>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-[#A0A0A0]">
-                  Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
-                </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
                     <span className="text-[#D8A545] text-base">✦</span>
@@ -954,13 +955,11 @@ function LandingPage() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-[#F2D07C]">Premium Experience</p>
-                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation (1:1)</h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
+                <h3 className="mt-3 font-['Cinzel'] text-2xl text-white">60-Minute Complete Consultation (One-to-One)</h3>
+                <div className="mt-6 flex items-center gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD</span>
+                  <span className="text-2xl" title="Canada">🇨🇦</span>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-white/80">
-                  A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
-                </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
                     <span className="text-[#F2D07C] text-base">✦</span>
@@ -972,7 +971,7 @@ function LandingPage() {
                   </div>
                   <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
                     <span className="text-[#F2D07C] text-base">✦</span>
-                    <span>Relevant if want to have a deep soulfull session</span>
+                    <span>For Deep soulfull session</span>
                   </div>
                   <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
                     <span className="text-[#F2D07C] text-base">✦</span>
