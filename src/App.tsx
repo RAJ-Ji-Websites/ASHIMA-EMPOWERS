@@ -916,7 +916,7 @@ function LandingPage() {
                   25-Minute Private Consultation
                 </h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$450</span>
                 </div>
                 <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-[#D7D7D7] leading-relaxed">
@@ -952,7 +952,7 @@ function LandingPage() {
                   60-Minute Complete Consultation
                 </h3>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200</span>
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$750</span>
                 </div>
                 <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-white leading-relaxed">
