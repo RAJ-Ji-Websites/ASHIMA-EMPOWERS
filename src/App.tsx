@@ -886,9 +886,20 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">₹499</span>
                   <span className="text-sm text-[#A0A0A0] line-through">₹3,999</span>
                 </div>
-                <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-[#D7D7D7] leading-relaxed">
-                  Receive a personalized recorded video where Ashima analyzes your birth details using Astrology, Numerology and Palmistry and provides focused guidance tailored specifically to you.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Astrology + Numerology will be analysed</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-red-500 text-sm">❌</span>
+                    <span>no 1:1 Interaction</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-red-500 text-sm">❌</span>
+                    <span>no voice call / video call</span>
+                  </div>
+                </div>
               </div>
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
@@ -919,12 +930,27 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$450</span>
                 </div>
-                <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-1.5 text-sm font-semibold text-[#F2D07C]">
-                  🇮🇳 ₹6,100 Special Offer for Indian Clients
+                <p className="mt-4 font-['Cinzel'] text-2xl text-[#F2D07C] sm:text-3xl">
+                  🇮🇳 ₹6,100 Special Offer for Indian Clients (Limited-Time-Offer)
                 </p>
-                <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-[#D7D7D7] leading-relaxed">
-                  Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>voice/video call</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Astrology + Numerology + Palmistry Analysis</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>Relevant for 2-3 Questions</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
+                    <span className="text-[#D8A545] text-base">✦</span>
+                    <span>1:1 Consultation</span>
+                  </div>
+                </div>
               </div>
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
@@ -958,12 +984,27 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$750</span>
                 </div>
-                <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-1.5 text-sm font-semibold text-[#F2D07C]">
-                  🇮🇳 ₹6,100 Special Offer for Indian Clients
+                <p className="mt-4 font-['Cinzel'] text-2xl text-[#F2D07C] sm:text-3xl">
+                  🇮🇳 ₹11,000 Special Offer for Indian Clients (Limited-Time-Offer)
                 </p>
-                <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-white leading-relaxed">
-                  A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
-                </p>
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>comprehensive one-on-one consultation</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>detailed Kundli analysis, Astrology, Numerology, Palmistry</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>Relevant if want to have a deep soulfull session</span>
+                  </div>
+                  <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
+                    <span className="text-[#F2D07C] text-base">✦</span>
+                    <span>Life/Spiritual Guidance</span>
+                  </div>
+                </div>
               </div>
               <motion.button
                 whileHover="hover"
