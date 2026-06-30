@@ -930,8 +930,14 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$450</span>
                 </div>
-                <p className="mt-4 font-['Cinzel'] text-2xl text-[#F2D07C] sm:text-3xl">
-                  🇮🇳 ₹6,100 Special Offer for Indian Clients (Limited-Time-Offer)
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">🇮🇳 ₹6,100</span>
+                </div>
+                <p className="mt-2 font-['Cormorant_Garamond'] text-lg text-[#D7D7D7]">
+                  <span className="rounded-md bg-[#D8A545]/25 px-2 py-0.5 font-bold text-[#F2D07C]">Special Offer</span> for Indian Clients
+                </p>
+                <p className="mt-1.5">
+                  <span className="rounded-md border border-[#F2D07C]/40 bg-[#D8A545]/15 px-2.5 py-1 text-sm font-bold tracking-wide text-[#F2D07C]">(Limited-Time-Offer)</span>
                 </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-sm text-[#D7D7D7]">
@@ -984,8 +990,14 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$750</span>
                 </div>
-                <p className="mt-4 font-['Cinzel'] text-2xl text-[#F2D07C] sm:text-3xl">
-                  🇮🇳 ₹11,000 Special Offer for Indian Clients (Limited-Time-Offer)
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">🇮🇳 ₹11,000</span>
+                </div>
+                <p className="mt-2 font-['Cormorant_Garamond'] text-lg text-white">
+                  <span className="rounded-md bg-[#D8A545]/25 px-2 py-0.5 font-bold text-[#F2D07C]">Special</span> Offer for Indian Clients
+                </p>
+                <p className="mt-1.5">
+                  <span className="rounded-md border border-[#F2D07C]/40 bg-[#D8A545]/15 px-2.5 py-1 text-sm font-bold tracking-wide text-[#F2D07C]">(Limited-Time-Offer)</span>
                 </p>
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-3 rounded-xl border border-[#D8A545]/20 bg-[#D8A545]/5 px-4 py-3 text-sm text-white">
