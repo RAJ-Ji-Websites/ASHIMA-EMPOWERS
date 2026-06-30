@@ -919,6 +919,9 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$120 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$450</span>
                 </div>
+                <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-1.5 text-sm font-semibold text-[#F2D07C]">
+                  🇮🇳 ₹6,100 Special Offer for Indian Clients
+                </p>
                 <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-[#D7D7D7] leading-relaxed">
                   Perfect if you have a few important questions and would like to speak directly with Ashima for personalized guidance and clarity.
                 </p>
@@ -955,6 +958,9 @@ function LandingPage() {
                   <span className="font-['Cinzel'] text-4xl text-[#F2D07C]">$200 CAD 🇨🇦</span>
                   <span className="text-sm text-[#A0A0A0] line-through">$750</span>
                 </div>
+                <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#D8A545]/30 bg-[#D8A545]/10 px-3 py-1.5 text-sm font-semibold text-[#F2D07C]">
+                  🇮🇳 ₹6,100 Special Offer for Indian Clients
+                </p>
                 <p className="mt-6 font-['Cormorant_Garamond'] text-lg text-white leading-relaxed">
                   A comprehensive one-on-one consultation including detailed Kundli analysis, Astrology, Numerology, Palmistry, life guidance and live discussion where you can ask all your questions.
                 </p>
