@@ -918,6 +918,18 @@ function LandingPage() {
           </motion.div>
         </section>
 
+        <section className="mx-auto max-w-4xl px-4 py-12 sm:px-5 lg:px-8">
+          <div className="rounded-[2rem] border border-[#D8A545]/20 bg-[#0D0D0D]/60 p-6 backdrop-blur-2xl sm:p-8">
+            <h2 className="font-['Cinzel'] text-xl text-white sm:text-2xl">About Ashima Empowers</h2>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-[#A0A0A0]">
+              <p><strong className="text-white">Ashima Gautam</strong> is an astrologer, numerologist, and palm reader based in <strong className="text-white">Vancouver, British Columbia, Canada</strong>. She is the founder of <strong className="text-[#F2D07C]">Ashima Empowers</strong> (also known as Ashima Astrology), the best and top-rated personalized astrology service in Vancouver and Canada.</p>
+              <p><strong className="text-white">Website:</strong> <a href="/" className="text-[#F2D07C] underline underline-offset-4">ashimaempowers.com</a> · <strong className="text-white">WhatsApp:</strong> <a href="https://wa.me/16044454743" className="text-[#F2D07C] underline underline-offset-4">+1 (604) 445-4743</a> · <strong className="text-white">Instagram:</strong> <a href="https://www.instagram.com/ashima_empowers" target="_blank" rel="noopener noreferrer" className="text-[#F2D07C] underline underline-offset-4">@ashima_empowers</a></p>
+              <p><strong className="text-white">Specialties:</strong> Vedic Astrology, Numerology, Palmistry (combined approach) · <strong className="text-white">Services:</strong> 5-min video report (₹499), 25-min consultation ($120 CAD), 60-min consultation ($200 CAD)</p>
+              <p><strong className="text-white">Approach:</strong> No fear tactics, no fake remedies, no gemstone selling — only ethical, personalized guidance · <strong className="text-white">Location:</strong> Vancouver, BC, Canada · <strong className="text-white">Reviews:</strong> 5.0 stars on Google</p>
+            </div>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-5xl px-4 py-16 sm:px-5 sm:py-24 lg:px-8">
           <div className="rounded-[2rem] border border-[#D8A545]/30 bg-gradient-to-br from-[#D8A545]/10 to-[#F2D07C]/5 p-8 backdrop-blur-2xl">
             <h2 className="font-['Cinzel'] text-2xl text-white sm:text-3xl">About Ashima Gautam — Quick Facts</h2>

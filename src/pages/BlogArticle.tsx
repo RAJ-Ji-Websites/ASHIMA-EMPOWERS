@@ -12,7 +12,9 @@ type Article = {
   keywords: string
   readTime: string
   date: string
-  content: { type: 'p' | 'h2' | 'h3' | 'ul'; text?: string; items?: string[] }[]
+  heroImage?: string
+  heroAlt?: string
+  content: { type: 'p' | 'h2' | 'h3' | 'ul' | 'img'; text?: string; items?: string[]; src?: string; alt?: string }[]
 }
 
 const articles: Record<string, Article> = {
@@ -23,6 +25,8 @@ const articles: Record<string, Article> = {
     keywords: 'personalized life report, combined astrology numerology palmistry, kundli analysis, personalized astrology reading',
     readTime: '8 min',
     date: '2025-01-15',
+    heroImage: '/images/zodiac-wheel.jpg',
+    heroAlt: 'Vedic astrology zodiac wheel showing all 12 signs',
     content: [
       { type: 'p', text: 'A personalized life report is a confidential, individually prepared document that combines multiple ancient disciplines to provide a comprehensive understanding of your personality, career path, relationship patterns, and life purpose. Unlike generic horoscope apps that produce automated readings, a true personalized life report is interpreted by a human astrologer who reviews your specific birth details and creates a reading tailored to one person only: you.' },
       { type: 'p', text: 'Ashima Gautam, founder of Ashima Empowers, offers personalized life reports that combine three disciplines: Vedic Astrology (Jyotish), Numerology, and Palmistry. This combined approach is what makes her readings more thorough and accurate than standard astrology-only consultations. Let us explore how each discipline contributes and why combining them creates a more complete picture.' },
@@ -55,6 +59,8 @@ const articles: Record<string, Article> = {
     keywords: 'online astrology consultation, book astrology reading, astrology consultation guide, prepare for astrology reading',
     readTime: '6 min',
     date: '2025-01-20',
+    heroImage: '/images/zodiac-wheel.jpg',
+    heroAlt: 'Astrology consultation preparation guide',
     content: [
       { type: 'p', text: 'Booking your first online astrology consultation can feel overwhelming, especially if you have never had a personalized reading before. This guide will walk you through everything you need to know — what details to prepare, what questions to ask, and what to expect — so you can get the most value from your session with an astrologer.' },
       { type: 'p', text: 'Whether you are booking a 5-minute video report, a 25-minute private consultation, or a 60-minute complete consultation, preparation is key to receiving an accurate and useful reading. Here is how to prepare.' },
@@ -92,6 +98,8 @@ const articles: Record<string, Article> = {
     keywords: 'palm reading career, palmistry career line, online palmistry consultation, palm lines meaning, career guidance palmistry',
     readTime: '7 min',
     date: '2025-01-25',
+    heroImage: '/images/palm-lines-diagram.jpg',
+    heroAlt: 'Palm lines diagram showing life line, head line, heart line, and fate line',
     content: [
       { type: 'p', text: 'Palmistry has been used for thousands of years to understand personality traits, life patterns, and potential future events. One of the most common reasons people seek a palm reading is for career guidance — to understand their professional strengths, ideal career paths, and the timing of career milestones. In this article, we explore how palmistry can reveal insights about your career and professional path.' },
       { type: 'p', text: 'Ashima Gautam, astrologer and palm reader at Ashima Empowers, incorporates palmistry into her personalized life reports alongside Vedic Astrology and Numerology. This combined approach provides a deeper, more precise career reading than palmistry alone.' },
@@ -224,6 +232,8 @@ const articles: Record<string, Article> = {
     keywords: 'life path number calculator, numerology calculator, life path number meaning, numerology by date of birth, destiny number calculator',
     readTime: '11 min',
     date: '2025-02-15',
+    heroImage: '/images/numerology-numbers.jpg',
+    heroAlt: 'Numerology numbers 1-9 in sacred geometry pattern',
     content: [
       { type: 'p', text: 'Your Life Path Number is the most important number in your numerology chart. Calculated from your complete date of birth, it reveals your core personality, natural talents, life purpose, and the path you\'re meant to walk in this lifetime. Unlike your sun sign in astrology, which changes monthly, your Life Path Number is unique to your specific birth date and remains constant throughout your life.' },
       { type: 'p', text: 'In this comprehensive guide, you\'ll learn how to calculate your Life Path Number, understand what each number means, and discover how to use this knowledge for career guidance, relationship compatibility, and life direction. Ashima Gautam, numerologist and founder of Ashima Empowers, explains the deeper meaning behind each Life Path Number.' },
@@ -280,6 +290,8 @@ const articles: Record<string, Article> = {
     keywords: 'palm reading marriage, heart line palmistry, palm reading love, relationship palmistry, marriage line palm',
     readTime: '9 min',
     date: '2025-02-20',
+    heroImage: '/images/palm-lines-diagram.jpg',
+    heroAlt: 'Heart line and marriage line palmistry diagram',
     content: [
       { type: 'p', text: 'Palmistry has been used for thousands of years to understand personality traits, life patterns, and potential future events. One of the most common reasons people seek a palm reading is for love and marriage guidance — to understand their relationship patterns, ideal partner type, marriage timing, and compatibility factors. In this comprehensive guide, we explore what your palm lines reveal about love, marriage, and relationships.' },
       { type: 'p', text: 'Ashima Gautam, palm reader and astrologer at Ashima Empowers (based in Vancouver, Canada), incorporates palmistry into her personalized life reports alongside Vedic Astrology and Numerology. This combined approach reveals relationship patterns that palmistry alone simply cannot uncover.' },
@@ -455,6 +467,24 @@ export default function BlogArticle() {
           <div className="mt-6 h-px max-w-sm bg-gradient-to-r from-[#F2D07C] to-transparent" />
         </motion.div>
 
+        {article.heroImage && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-8 overflow-hidden rounded-2xl border border-[#D8A545]/20"
+          >
+            <img
+              src={article.heroImage}
+              alt={article.heroAlt || article.title}
+              className="w-full h-auto"
+              width="1200"
+              height="675"
+              loading="eager"
+            />
+          </motion.div>
+        )}
+
         <div className="mt-10 space-y-5">
           {article.content.map((block, index) => {
             if (block.type === 'h2') return <h2 key={index} className="mt-8 font-['Cinzel'] text-xl text-[#F2D07C] sm:text-2xl">{block.text}</h2>
@@ -467,6 +497,19 @@ export default function BlogArticle() {
                   </li>
                 ))}
               </ul>
+            )
+            if (block.type === 'img') return (
+              <figure key={index} className="my-8">
+                <img
+                  src={block.src}
+                  alt={block.alt || ''}
+                  className="w-full h-auto rounded-xl border border-[#D8A545]/20"
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
+                {block.text && <figcaption className="mt-3 text-center text-sm text-[#A0A0A0]">{block.text}</figcaption>}
+              </figure>
             )
             return <p key={index} className="text-base leading-relaxed text-[#A0A0A0]">{block.text}</p>
           })}
