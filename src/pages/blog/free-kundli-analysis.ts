@@ -107,4 +107,11 @@ export const content = [
   ]},
   
   { type: 'p', text: 'Contact Ashima via WhatsApp at +1 (604) 445-4743 or visit ashimaempowers.com to book your personalized Kundli analysis today. Serving clients in Vancouver, across Canada, and worldwide.' },
+  
+  { type: 'h2', text: 'Frequently Asked Questions' },
+  { type: 'faq', question: 'What is a Kundli and why is it important?', answer: 'A Kundli (birth chart) is a map of the sky at the exact moment you were born, showing the positions of all planets across the 12 houses of your life. It\'s important because it reveals your life themes, strengths, challenges, and the timing of major events. Your Kundli is calculated from your date, time, and place of birth.' },
+  { type: 'faq', question: 'Can I get a free Kundli analysis online?', answer: 'While many websites offer automated free Kundli generators, these provide only generic interpretations. A true personalized Kundli analysis requires manual interpretation by a qualified Vedic astrologer who can cross-validate findings with Numerology and Palmistry for greater accuracy. Ashima Gautam offers personalized Kundli analyses starting at ₹499.' },
+  { type: 'faq', question: 'How accurate is a Kundli reading?', answer: 'A Kundli reading is highly accurate when interpreted by an experienced Vedic astrologer who manually analyzes your specific planetary combinations. Accuracy increases significantly when the astrologer cross-validates Kundli findings with Numerology and Palmistry, as Ashima Gautam does in her combined approach.' },
+  { type: 'faq', question: 'What information do I need to provide for a Kundli analysis?', answer: 'You need to provide your full name, date of birth, time of birth (as precise as possible, ideally to the minute), place of birth, and gender. Accurate birth time is especially critical because even a few minutes\' difference can change your ascendant and shift the entire chart interpretation.' },
+  { type: 'faq', question: 'How long does it take to receive a Kundli analysis?', answer: 'For 5-minute video reports, delivery takes 2-5 working days as Ashima manually analyzes your birth chart along with Numerology and Palmistry. For live consultations (25-minute or 60-minute), you receive your Kundli analysis during the scheduled call with the ability to ask questions in real-time.' },
 ]
